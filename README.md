@@ -16,10 +16,15 @@ My prefered way is to simply run the site locally on my machine. That way it's s
 
 ### Installation
 
-Download the repository and put the `bitsandpieces` folder in the `themes` folder in Pico and update the config.php with the following settings:
-
-```php
-$config['theme'] = 'bitsandpieces';
+Download the repository and put the `bitsandpieces` folder in the `themes` folder in Pico.
+Then finally Update your config.yml in your config folder like this:
+Change the line that says
+```yaml
+theme: default
+```
+to:
+```yaml
+theme: bitsandpieces
 ```
 
 ### Editing content
@@ -32,7 +37,7 @@ I also keep my reference files as a private git repository on github so I can ac
 
 ### Navigation
 
-The theme has currently no sub navigation. Regardles of the folder structure in your content directory all pages will be rendered in a flat list
+The theme has currently no sub navigation. Regardles of the folder structure in your content directory all pages will be rendered in a flat list.
 
 ### Keyboard shortcuts
 Assign keyboard shortcuts to quickly switch between pages. Add the metadata `Shortcut: <key>` in the YAML header to assign the key to the page. Use `+` to make key combos. [Look at mousetrap documentation to see what you can do](https://craig.is/killing/mice)
@@ -44,7 +49,7 @@ Shortcut: alt+1
 ---
 ```
 
-The above example will open the Bits and Pieces page when the keys `alt` and `1` keys are pressed simultaneously
+The above example will open the Bits and Pieces page when the keys `alt` and `1` keys are pressed simultaneously.
 
 ### Titles
 
@@ -52,7 +57,7 @@ Do include a level 1 header in your content `# this is a H1`. The title you spec
 
 ### Headings
 
-The theme only provide styles for the first three levels of headers and style the remaining headers as bold text. It's my opinion that if you need more than three levels of hierarchy you'd better split the content into different files
+The theme only provide styles for the first three levels of headers and style the remaining headers as bold text. It's my opinion that if you need more than three levels of hierarchy you'd better split the content into different files.
 
 ### Code snippets
 
@@ -65,6 +70,8 @@ Code highligt are rendered using [highlight.js](https://highlightjs.org). Put th
 ```
 
 ### Load external css files
+
+_This part of the documentation is outdated and not compatible with PicCMS 2.X._
 
 Add the following setting in`config.php` to load external css files.
 
