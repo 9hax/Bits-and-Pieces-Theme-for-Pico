@@ -85,7 +85,8 @@ $config['external_css'] = array(
 
 ### Browser compability
 
-Since this theme is not intended for a public facing website I have taken the freedom to support only web browsers I use in my daily life which is **Safari** and **Chrome** for Mac and iOS. The theme also uses some bleeding edge css like native css variables and position sticky (which is unfortunately not available on chrome yet). So don't expect the theme to run on Internet Explorer. Maybe Edge. But I haven't tested and I probably won't either until Apple stops making macs.
+This theme was tested and is working fine in Safari, Chrome and Microsoft Edge.
+Internet Explorer is not supported.
 
 ![scroll-preview](scroll-preview.gif)
 
