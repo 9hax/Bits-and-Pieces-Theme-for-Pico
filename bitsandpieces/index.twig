@@ -16,34 +16,47 @@
   {% endfor %}
 </head>
 <body>
+<div class="flex-wrapper">
+  <div class="page-content">
+    <aside class="main-nav">
+    <p>Menu</p>
+    <nav>
+      <ul>
+        {% for page in pages if page.title and not page.hidden %}
+          <li class="menuitem {% if page.id == current_page.id %}active{% endif %}">
+            <a href="{{ page.url }}" data-shortcut="{{page.meta.shortcut}}">
+              {{ page.title }}
+              {% if page.meta.shortcut %}
+                <span class="shortcut">{{page.meta.shortcut|replace({'+':' '})}}</a>
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    </aside>
+    <main class="main-content">
+      <article class="article">
+        {{ content }}
+      </article>
+    </main>
+    <nav class="page-toc">
+      <ul id="page-toc-container">
 
-<aside class="main-nav">
-<p>Menu</p>
-<nav>
-  <ul>
-    {% for page in pages if page.title and not page.hidden %}
-      <li class="menuitem {% if page.id == current_page.id %}active{% endif %}">
-        <a href="{{ page.url }}" data-shortcut="{{page.meta.shortcut}}">
-          {{ page.title }}
-          {% if page.meta.shortcut %}
-            <span class="shortcut">{{page.meta.shortcut|replace({'+':' '})}}</a>
-          {% endif %}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-</nav>
-</aside>
-<main class="main-content">
-  <article class="article">
-    {{ content }}
-  </article>
-</main>
-<nav class="page-toc">
-  <ul id="page-toc-container">
-
-  </ul>
-</nav>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer">
+    <article class="article">
+      <p class="footer-content">
+        This is a footer text.
+      </p>
+      <p class="copyright">
+        This is another one.
+      </p>
+    </article>
+  </div>
+</div>
 
 <script src="{{ theme_url }}/scripts/highlight.js"></script>
 <script src="{{ theme_url }}/scripts/mousetrap.min.js"></script>

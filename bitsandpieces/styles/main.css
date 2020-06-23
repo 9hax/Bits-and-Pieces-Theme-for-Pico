@@ -30,10 +30,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: rgb(22, 22, 23);
-    --text-color: rgb(138, 138, 139);
+    --text-color: rgb(190, 200, 200);
     --border-color: rgb(40, 40, 41);
     --code-bg-color: rgb(33, 33, 34);
-    --accent-color: rgb(80, 80, 81);
+    --accent-color: rgb(140, 135, 160);
     --link-color: #2980B9;
   }
 }
@@ -113,6 +113,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
+  height: 100%;
 }
 
 
@@ -322,7 +323,7 @@ pre code {
   height: 100vh;
   left: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   padding-left: var(--vertical-padding);
   position: fixed;
   top: 0;
@@ -376,10 +377,6 @@ pre code {
   padding-left: 0px;
 }
 
-.main-nav nav li.active {
-
-}
-
 .main-nav nav li.active > a {
   font-weight: bold;
 }
@@ -430,7 +427,6 @@ pre code {
 .page-toc {
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: scroll;
   padding-right: var(--vertical-padding);
   position: fixed;
   right: 0;
@@ -441,6 +437,19 @@ pre code {
 @media (max-width: 1200px) {
   .page-toc {
     display: none;
+  }
+}
+
+@media (max-width: 978px) {
+  .main-content {
+    margin: 0;
+  }
+  .main-nav {
+    height: initial;
+    position: initial;
+  }
+  .main-nav nav {
+    padding: 0;
   }
 }
 
@@ -497,4 +506,26 @@ pre code {
 
 .example + pre code {
   border-top: 0;
+}
+
+/* Footer code. */
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.footer {
+  padding: 1rem;
+}
+
+.footer-content {
+  float: left;
+}
+
+.copyright {
+  float: right;
+  padding-right: 1rem;
 }
