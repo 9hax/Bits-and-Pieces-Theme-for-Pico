@@ -20,7 +20,7 @@
 <aside class="main-nav">
 <nav>
   <ul>
-    {% for page in pages if page.title %}
+    {% for page in pages if page.title and not page.hidden %}
       <li class="menuitem {% if page.id == current_page.id %}active{% endif %}">
         <a href="{{ page.url }}" data-shortcut="{{page.meta.shortcut}}">
           {{ page.title }}
