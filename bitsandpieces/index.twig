@@ -19,8 +19,8 @@
 <div class="flex-wrapper">
   <div class="page-content">
     <aside class="main-nav">
-    <p>Menu</p>
     <nav>
+    <p>Menu</p>
       <ul>
         {% for page in pages if page.title and not page.hidden %}
           <li class="menuitem {% if page.id == current_page.id %}active{% endif %}">
